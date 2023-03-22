@@ -1,4 +1,4 @@
-package com.br.med.voll.api.model.dto.doctors.put;
+package com.br.med.voll.api.model.dto.doctor.put;
 
 public record UpdateDoctorAddressRequestDTO (
      String street,

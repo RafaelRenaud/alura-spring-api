@@ -1,4 +1,4 @@
-package com.br.med.voll.api.model.dto.doctors.post;
+package com.br.med.voll.api.model.dto.doctor.post;
 
 import com.br.med.voll.api.model.type.Speciality;
 import jakarta.validation.Valid;

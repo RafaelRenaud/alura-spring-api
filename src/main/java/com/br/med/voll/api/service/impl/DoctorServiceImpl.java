@@ -1,9 +1,9 @@
 package com.br.med.voll.api.service.impl;
 
-import com.br.med.voll.api.model.dto.doctors.get.ListDoctorResponseDTO;
-import com.br.med.voll.api.model.dto.doctors.post.CreateDoctorRequestDTO;
-import com.br.med.voll.api.model.dto.doctors.post.CreateDoctorResponseDTO;
-import com.br.med.voll.api.model.dto.doctors.put.UpdateDoctorRequestDTO;
+import com.br.med.voll.api.model.dto.doctor.get.ListDoctorResponseDTO;
+import com.br.med.voll.api.model.dto.doctor.post.CreateDoctorRequestDTO;
+import com.br.med.voll.api.model.dto.doctor.post.CreateDoctorResponseDTO;
+import com.br.med.voll.api.model.dto.doctor.put.UpdateDoctorRequestDTO;
 import com.br.med.voll.api.model.entity.Doctor;
 import com.br.med.voll.api.repository.DoctorRepository;
 import com.br.med.voll.api.service.DoctorService;
@@ -48,5 +48,11 @@ public class DoctorServiceImpl implements DoctorService {
     public void inactiveDoctor(Long id) {
         Doctor doctor = doctorRepository.getReferenceById(id);
         doctor.inactiveDoctor();
+    }
+
+    @Override
+    public ListDoctorResponseDTO getDoctor(Long id) {
+        Doctor doctor = doctorRepository.getReferenceById(id);
+        return new ListDoctorResponseDTO(doctor);
     }
 }

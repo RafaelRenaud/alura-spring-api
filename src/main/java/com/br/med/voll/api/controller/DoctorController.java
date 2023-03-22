@@ -1,9 +1,9 @@
 package com.br.med.voll.api.controller;
 
-import com.br.med.voll.api.model.dto.doctors.get.ListDoctorResponseDTO;
-import com.br.med.voll.api.model.dto.doctors.post.CreateDoctorRequestDTO;
-import com.br.med.voll.api.model.dto.doctors.post.CreateDoctorResponseDTO;
-import com.br.med.voll.api.model.dto.doctors.put.UpdateDoctorRequestDTO;
+import com.br.med.voll.api.model.dto.doctor.get.ListDoctorResponseDTO;
+import com.br.med.voll.api.model.dto.doctor.post.CreateDoctorRequestDTO;
+import com.br.med.voll.api.model.dto.doctor.post.CreateDoctorResponseDTO;
+import com.br.med.voll.api.model.dto.doctor.put.UpdateDoctorRequestDTO;
 import com.br.med.voll.api.service.impl.DoctorServiceImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,9 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
+
+import java.net.URI;
 
 @RestController
 @RequestMapping("/doctors")
@@ -23,13 +26,16 @@ public class DoctorController {
     private DoctorServiceImpl doctorService;
 
     @PostMapping
-    public ResponseEntity<CreateDoctorResponseDTO> createDoctor(
+    public ResponseEntity createDoctor(
             @RequestBody
             @Valid
-            CreateDoctorRequestDTO requestDTO
+            CreateDoctorRequestDTO requestDTO,
+            UriComponentsBuilder uriComponentsBuilder
             ){
+
         CreateDoctorResponseDTO responseDTO = doctorService.createDoctor(requestDTO);
-        return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
+        URI uri = uriComponentsBuilder.path("/doctors/{doctor_id}").buildAndExpand(responseDTO.id()).toUri();
+        return ResponseEntity.created(uri).body(responseDTO);
     }
 
     @GetMapping
@@ -58,5 +64,13 @@ public class DoctorController {
     ){
         doctorService.inactiveDoctor(doctorId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/{doctor_id}")
+    public ResponseEntity getDoctor(
+            @PathVariable(name = "doctor_id") Long doctorId
+    ){
+        ListDoctorResponseDTO responseDTO = doctorService.getDoctor(doctorId);
+        return ResponseEntity.ok(responseDTO);
     }
 }

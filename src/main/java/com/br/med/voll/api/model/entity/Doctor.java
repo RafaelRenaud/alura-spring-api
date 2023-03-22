@@ -1,7 +1,7 @@
 package com.br.med.voll.api.model.entity;
 
-import com.br.med.voll.api.model.dto.doctors.post.CreateDoctorRequestDTO;
-import com.br.med.voll.api.model.dto.doctors.put.UpdateDoctorRequestDTO;
+import com.br.med.voll.api.model.dto.doctor.post.CreateDoctorRequestDTO;
+import com.br.med.voll.api.model.dto.doctor.put.UpdateDoctorRequestDTO;
 import com.br.med.voll.api.model.type.Speciality;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

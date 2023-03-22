@@ -1,4 +1,4 @@
-package com.br.med.voll.api.model.dto.doctors.post;
+package com.br.med.voll.api.model.dto.doctor.post;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

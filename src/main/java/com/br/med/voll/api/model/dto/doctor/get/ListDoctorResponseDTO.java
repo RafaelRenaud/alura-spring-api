@@ -1,4 +1,4 @@
-package com.br.med.voll.api.model.dto.doctors.get;
+package com.br.med.voll.api.model.dto.doctor.get;
 
 import com.br.med.voll.api.model.entity.Doctor;
 import com.br.med.voll.api.model.type.Speciality;

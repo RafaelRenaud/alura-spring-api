@@ -1,4 +1,4 @@
-package com.br.med.voll.api.model.dto.doctors.put;
+package com.br.med.voll.api.model.dto.doctor.put;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;

@@ -1,7 +1,7 @@
 package com.br.med.voll.api.model.entity;
 
-import com.br.med.voll.api.model.dto.doctors.post.CreateDoctorAddressRequestDTO;
-import com.br.med.voll.api.model.dto.doctors.put.UpdateDoctorAddressRequestDTO;
+import com.br.med.voll.api.model.dto.doctor.post.CreateDoctorAddressRequestDTO;
+import com.br.med.voll.api.model.dto.doctor.put.UpdateDoctorAddressRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
