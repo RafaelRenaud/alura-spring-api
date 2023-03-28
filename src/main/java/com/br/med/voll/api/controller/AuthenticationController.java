@@ -2,7 +2,7 @@ package com.br.med.voll.api.controller;
 
 import com.br.med.voll.api.model.dto.authentication.AuthenticationRequestDTO;
 import com.br.med.voll.api.model.dto.authentication.AuthenticationResponseDTO;
-import com.br.med.voll.api.model.dto.user.User;
+import com.br.med.voll.api.model.entity.User;
 import com.br.med.voll.api.service.impl.AuthenticationServiceImpl;
 import com.br.med.voll.api.service.impl.TokenServiceImpl;
 import jakarta.validation.Valid;

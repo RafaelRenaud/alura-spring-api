@@ -1,7 +1,7 @@
 package com.br.med.voll.api.model.entity;
 
-import com.br.med.voll.api.model.dto.doctor.post.CreateDoctorAddressRequestDTO;
-import com.br.med.voll.api.model.dto.doctor.put.UpdateDoctorAddressRequestDTO;
+import com.br.med.voll.api.model.dto.address.CreateAddressRequestDTO;
+import com.br.med.voll.api.model.dto.address.UpdateAddressRequestDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,17 +26,17 @@ public class Address {
 
     private String complement;
 
-    public Address(CreateDoctorAddressRequestDTO createDoctorAddressRequestDTO){
-        this.street = createDoctorAddressRequestDTO.street();
-        this.neighborhood = createDoctorAddressRequestDTO.neighborhood();
-        this.zipcode = createDoctorAddressRequestDTO.zipcode();
-        this.city = createDoctorAddressRequestDTO.city();
-        this.uf = createDoctorAddressRequestDTO.uf();
-        this.addressNumber = createDoctorAddressRequestDTO.number();
-        this.complement = createDoctorAddressRequestDTO.complement();
+    public Address(CreateAddressRequestDTO createAddressRequestDTO){
+        this.street = createAddressRequestDTO.street();
+        this.neighborhood = createAddressRequestDTO.neighborhood();
+        this.zipcode = createAddressRequestDTO.zipcode();
+        this.city = createAddressRequestDTO.city();
+        this.uf = createAddressRequestDTO.uf();
+        this.addressNumber = createAddressRequestDTO.number();
+        this.complement = createAddressRequestDTO.complement();
     }
 
-    public void updateDoctorAddress(UpdateDoctorAddressRequestDTO address){
+    public void updateAddress(UpdateAddressRequestDTO address){
         if(address.street() != null){
             this.street = address.street();
         }if(address.neighborhood() != null){

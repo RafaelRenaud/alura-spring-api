@@ -58,7 +58,7 @@ public class Doctor {
         }
 
         if(informations.address() != null){
-            this.address.updateDoctorAddress(informations.address());
+            this.address.updateAddress(informations.address());
         }
     }
 

@@ -1,5 +1,8 @@
 package com.br.med.voll.api.model.dto.error;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 
@@ -8,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
 public class ErrorHandlerDTO {
 
     private String statusCode;

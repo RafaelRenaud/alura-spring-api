@@ -1,4 +1,4 @@
-package com.br.med.voll.api.model.dto.user;
+package com.br.med.voll.api.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
